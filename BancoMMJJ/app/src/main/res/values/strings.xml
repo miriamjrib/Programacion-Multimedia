@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BancoMMJJ</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="introduce_usuario">Introduce el usuario</string>
+    <string name="introduce_contrasenya">Introduce la contraseña</string>
+    <string name="salir">Salir</string>
+    <string name="entrar">Entrar</string>
+    <string name="avatar">Avatar</string>
+    <string name="banco">banco</string>
+
+</resources>
