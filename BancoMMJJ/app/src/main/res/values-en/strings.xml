@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BancoMMJJ</string>
+    <string name="iniciar_sesion">Login</string>
+    <string name="introduce_usuario">Enter your username</string>
+    <string name="introduce_contrasenya">Enter your password</string>
+    <string name="salir">Exit</string>
+    <string name="entrar">Enter</string>
+    <string name="avatar">Avatar</string>
+    <string name="banco">bank</string>
+    <string name="posicion_global">GLOBAL POSITION</string>
+    <string name="movimientos">TRANSACTIONS</string>
+    <string name="transferencias">TRANSFERS</string>
+    <string name="cambiar_contrasenya">CHANGE PASSWORD</string>
+    <string name="promociones">PROMOTIONS</string>
+    <string name="cajeros">ATMS</string>
+    <string name="salirMain">EXIT</string>
+
+</resources>

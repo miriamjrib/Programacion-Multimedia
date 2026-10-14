@@ -7,5 +7,12 @@
     <string name="entrar">Entrar</string>
     <string name="avatar">Avatar</string>
     <string name="banco">banco</string>
+    <string name="posicion_global">POSICIÓN GLOBAL</string>
+    <string name="movimientos">MOVIMIENTOS</string>
+    <string name="transferencias">TRANSFERENCIAS</string>
+    <string name="cambiar_contrasenya">CAMBIAR CONTRASEÑA</string>
+    <string name="promociones">PROMOCIONES</string>
+    <string name="cajeros">CAJEROS</string>
+    <string name="salirMain">SALIR</string>
 
 </resources>
