@@ -14,5 +14,7 @@
     <string name="promociones">PROMOCIONES</string>
     <string name="cajeros">CAJEROS</string>
     <string name="salirMain">SALIR</string>
+    <string name="bienvenido_banco_mmjj">¡Bienvenido/a al banco MMJJ!</string>
+    <string name="acceder">ACCEDER</string>
 
 </resources>

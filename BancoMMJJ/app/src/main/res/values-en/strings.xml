@@ -14,5 +14,7 @@
     <string name="promociones">PROMOTIONS</string>
     <string name="cajeros">ATMS</string>
     <string name="salirMain">EXIT</string>
+    <string name="bienvenido_banco_mmjj">Welcome to MMJJ Bank!</string>
+    <string name="acceder">ACCESS</string>
 
 </resources>
