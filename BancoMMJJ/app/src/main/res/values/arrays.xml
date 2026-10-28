@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cuentas_transfer">
+        <item>ES60-2100-0418-40-1234567891</item>
+        <item>ES90-2080-5801-10-1234567891</item>
+        <item>ES12-0049-1500-05-2110000001</item>
+        <item>ES34-0182-6035-40-0201500002</item>
+    </string-array>
+    <string-array name="divisas">
+        <item>€</item>
+        <item>$</item>
+        <item>£</item>
+    </string-array>
+</resources>

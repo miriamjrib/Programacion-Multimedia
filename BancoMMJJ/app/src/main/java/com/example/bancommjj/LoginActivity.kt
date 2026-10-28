@@ -6,7 +6,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.bancommjj.bd.MiBancoOperacional
 import com.example.bancommjj.databinding.ActivityLoginBinding
+import com.example.bancommjj.pojo.Cliente
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -35,9 +37,18 @@ class LoginActivity : AppCompatActivity() {
             }
 
             if (esValido) {
-                val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("DNI", usuario)
-                startActivity(intent)
+                val mbo = MiBancoOperacional.getInstance(this)
+                val c = Cliente(0, usuario, null, null, contrasena, null)
+
+                val cliente = mbo?.login(c)
+                if (cliente == null) {
+                    binding.layoutContrasena.error = getString(R.string.login_incorrecto)
+                } else {
+                    binding.layoutContrasena.error = null
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("Cliente", cliente)
+                    startActivity(intent)
+                }
             }
         }
 

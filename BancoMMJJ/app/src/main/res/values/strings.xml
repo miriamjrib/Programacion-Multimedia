@@ -16,5 +16,30 @@
     <string name="salirMain">SALIR</string>
     <string name="bienvenido_banco_mmjj">¡Bienvenido/a al banco MMJJ!</string>
     <string name="acceder">ACCEDER</string>
+    <string name="login_incorrecto">Usuario o contraseña incorrectos</string>
+    <string name="contrasena_vacia">Escribe la nueva contraseña</string>
+    <string name="contrasena_cambiada">Contraseña cambiada</string>
+    <string name="contrasena_error">No se pudo cambiar la contraseña</string>
+    <string name="bienvenido_cliente">Bienvenido/a, %1$s</string>
+    <string name="titulo_posicion_global">Posición global</string>
+    <string name="cuentas_dos_puntos">Cuentas:</string>
+    <string name="titulo_movimientos">Movimientos</string>
+    <string name="selecciona_cuenta">Selecciona la cuenta:</string>
+    <string name="ultimos_movimientos">Últimos movimientos:</string>
+    <string name="importe_formato">Importe: %1$s</string>
+    <string name="elige_cuenta">Elige tu cuenta:</string>
+    <string name="cuenta_propia">Cuenta propia</string>
+    <string name="cuenta_ajena">Cuenta ajena</string>
+    <string name="escribe_cuenta">Escribe el núm. cuenta ajena</string>
+    <string name="cantidad">Cantidad:</string>
+    <string name="enviar_justificante">Enviar justificante</string>
+    <string name="enviar">ENVIAR</string>
+    <string name="cancelar">CANCELAR</string>
+    <string name="faltan_datos">Faltan datos por rellenar</string>
+    <string name="resumen_origen">Cuenta origen:</string>
+    <string name="resumen_destino_propia">A cuenta propia:</string>
+    <string name="resumen_destino_ajena">A cuenta ajena:</string>
+    <string name="resumen_importe">Importe: %1$s%2$s</string>
+    <string name="resumen_justificante">Enviar justificante</string>
 
 </resources>

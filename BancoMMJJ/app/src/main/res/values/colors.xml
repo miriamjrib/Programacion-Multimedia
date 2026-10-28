@@ -8,4 +8,6 @@
     <color name="banco_on_primary">#FFFFFF</color>
     <color name="banco_text_main">#102A43</color>
     <color name="white">#FFFFFF</color>
+    <color name="banco_positivo">#2E7D32</color>
+    <color name="banco_negativo">#C62828</color>
 </resources>

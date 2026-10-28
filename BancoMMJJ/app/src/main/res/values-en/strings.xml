@@ -16,5 +16,29 @@
     <string name="salirMain">EXIT</string>
     <string name="bienvenido_banco_mmjj">Welcome to MMJJ Bank!</string>
     <string name="acceder">ACCESS</string>
-
+    <string name="login_incorrecto">Wrong username or password</string>
+    <string name="contrasena_vacia">Enter the new password</string>
+    <string name="contrasena_cambiada">Password changed</string>
+    <string name="contrasena_error">Could not change the password</string>
+    <string name="bienvenido_cliente">Welcome, %1$s</string>
+    <string name="titulo_posicion_global">Global position</string>
+    <string name="cuentas_dos_puntos">Accounts:</string>
+    <string name="titulo_movimientos">Transactions</string>
+    <string name="selecciona_cuenta">Select the account:</string>
+    <string name="ultimos_movimientos">Latest transactions:</string>
+    <string name="importe_formato">Amount: %1$s</string>
+    <string name="elige_cuenta">Choose your account:</string>
+    <string name="cuenta_propia">Own account</string>
+    <string name="cuenta_ajena">Other account</string>
+    <string name="escribe_cuenta">Enter the account number</string>
+    <string name="cantidad">Amount:</string>
+    <string name="enviar_justificante">Send receipt</string>
+    <string name="enviar">SEND</string>
+    <string name="cancelar">CANCEL</string>
+    <string name="faltan_datos">Some fields are missing</string>
+    <string name="resumen_origen">Source account:</string>
+    <string name="resumen_destino_propia">To own account:</string>
+    <string name="resumen_destino_ajena">To other account:</string>
+    <string name="resumen_importe">Amount: %1$s%2$s</string>
+    <string name="resumen_justificante">Send receipt</string>
 </resources>
