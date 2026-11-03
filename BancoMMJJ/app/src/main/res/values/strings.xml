@@ -41,5 +41,12 @@
     <string name="resumen_destino_ajena">A cuenta ajena:</string>
     <string name="resumen_importe">Importe: %1$s%2$s</string>
     <string name="resumen_justificante">Enviar justificante</string>
+    <string name="campo_obligatorio">Este campo es obligatorio</string>
+    <string name="cambiar_contrasena_titulo">Cambiar contraseña</string>
+    <string name="nueva_contrasena">Nueva contraseña</string>
+    <string name="contrasena_corta">Debe tener al menos 4 caracteres</string>
+    <string name="contrasena_igual">La nueva contraseña debe ser distinta de la actual</string>
+    <string name="confirmar_salir">¿Seguro que quieres cerrar la sesión?</string>
+    <string name="proximamente">Próximamente</string>
 
 </resources>

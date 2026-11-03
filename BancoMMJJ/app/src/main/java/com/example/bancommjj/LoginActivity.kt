@@ -23,14 +23,14 @@ class LoginActivity : AppCompatActivity() {
             var esValido = true
 
             if (usuario.isEmpty()) {
-                binding.layoutUsuario.error = "Este campo es obligatorio"
+                binding.layoutUsuario.error = getString(R.string.campo_obligatorio)
                 esValido = false
             } else {
                 binding.layoutUsuario.error = null
             }
 
             if (contrasena.isEmpty()) {
-                binding.layoutContrasena.error = "Este campo es obligatorio"
+                binding.layoutContrasena.error = getString(R.string.campo_obligatorio)
                 esValido = false
             } else {
                 binding.layoutContrasena.error = null

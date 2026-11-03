@@ -100,4 +100,8 @@ class Cuenta : Serializable {
     fun setCliente(cliente: Cliente?){
         this.cliente = cliente
     }
+
+    fun getNumeroCompleto(): String {
+        return banco + "-" + sucursal + "-" + dc + "-" + numeroCuenta
+    }
 }

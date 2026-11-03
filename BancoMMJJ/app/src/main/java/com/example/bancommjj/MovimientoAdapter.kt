@@ -23,7 +23,9 @@ class MovimientoAdapter(private var movimientos: List<Movimiento>) :
         return ViewHolder(b)
     }
 
-    override fun getItemCount() = movimientos.size
+    override fun getItemCount(): Int {
+        return movimientos.size
+    }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val m = movimientos[position]

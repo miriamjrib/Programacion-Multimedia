@@ -41,4 +41,11 @@
     <string name="resumen_destino_ajena">To other account:</string>
     <string name="resumen_importe">Amount: %1$s%2$s</string>
     <string name="resumen_justificante">Send receipt</string>
+    <string name="campo_obligatorio">This field is required</string>
+    <string name="cambiar_contrasena_titulo">Change password</string>
+    <string name="nueva_contrasena">New password</string>
+    <string name="contrasena_corta">It must have at least 4 characters</string>
+    <string name="contrasena_igual">The new password must be different from the current one</string>
+    <string name="confirmar_salir">Do you really want to log out?</string>
+    <string name="proximamente">Coming soon</string>
 </resources>

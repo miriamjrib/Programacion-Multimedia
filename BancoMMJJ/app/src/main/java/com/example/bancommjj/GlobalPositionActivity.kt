@@ -27,11 +27,16 @@ class GlobalPositionActivity : AppCompatActivity() {
             insets
         }
 
-        val cliente = IntentCompat.getSerializableExtra(intent, "Cliente", Cliente::class.java)
-            ?: run { finish(); return }
-
+        val cliente = intent.getSerializableExtra("Cliente") as Cliente
         val mbo = MiBancoOperacional.getInstance(this)
-        val cuentas = (mbo?.getCuentas(cliente) ?: arrayListOf<Any>()).filterIsInstance<Cuenta>()
+
+        val cuentas = ArrayList<Cuenta>()
+        val listaCuentas = mbo?.getCuentas(cliente)
+        if (listaCuentas != null) {
+            for (c in listaCuentas) {
+                cuentas.add(c as Cuenta)
+            }
+        }
 
         binding.rvCuentas.layoutManager = LinearLayoutManager(this)
         binding.rvCuentas.adapter = CuentaAdapter(cuentas)

@@ -6,7 +6,6 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.IntentCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,12 +30,21 @@ class MovementsActivity : AppCompatActivity() {
             insets
         }
 
-        val cliente = IntentCompat.getSerializableExtra(intent, "Cliente", Cliente::class.java)
-            ?: run { finish(); return }
-
+        val cliente = intent.getSerializableExtra("Cliente") as Cliente
         val mbo = MiBancoOperacional.getInstance(this)
-        val cuentas = (mbo?.getCuentas(cliente) ?: arrayListOf<Any>()).filterIsInstance<Cuenta>()
-        val textos = cuentas.map { it.numeroCompleto() }
+
+        val cuentas = ArrayList<Cuenta>()
+        val listaCuentas = mbo?.getCuentas(cliente)
+        if (listaCuentas != null) {
+            for (c in listaCuentas) {
+                cuentas.add(c as Cuenta)
+            }
+        }
+
+        val textos = ArrayList<String>()
+        for (cuenta in cuentas) {
+            textos.add(cuenta.getNumeroCompleto())
+        }
         binding.spCuentas.adapter =
             ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, textos)
 
@@ -46,8 +54,13 @@ class MovementsActivity : AppCompatActivity() {
 
         binding.spCuentas.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, pos: Int, id: Long) {
-                val movimientos = (mbo?.getMovimientos(cuentas[pos]) ?: arrayListOf<Any>())
-                    .filterIsInstance<Movimiento>()
+                val movimientos = ArrayList<Movimiento>()
+                val listaMovimientos = mbo?.getMovimientos(cuentas[pos])
+                if (listaMovimientos != null) {
+                    for (m in listaMovimientos) {
+                        movimientos.add(m as Movimiento)
+                    }
+                }
                 adapter.actualizar(movimientos)
             }
 

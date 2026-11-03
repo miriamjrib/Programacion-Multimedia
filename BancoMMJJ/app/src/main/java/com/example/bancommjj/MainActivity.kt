@@ -23,8 +23,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        cliente = IntentCompat.getSerializableExtra(intent, "Cliente", Cliente::class.java)
-            ?: run { finish(); return }
+        cliente = intent.getSerializableExtra("Cliente") as Cliente
         binding.tvBienvenida.text = getString(R.string.bienvenido_cliente, cliente.getNombre())
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -34,36 +33,56 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnPosicionGlobal.setOnClickListener { abrir(GlobalPositionActivity::class.java) }
         binding.btnMovimientos.setOnClickListener { abrir(MovementsActivity::class.java) }
-        binding.btnSalirMain.setOnClickListener { finish() }
+        binding.btnSalirMain.setOnClickListener {
+            AlertDialog.Builder(this)
+                .setMessage(R.string.confirmar_salir)
+                .setPositiveButton(android.R.string.ok) { dialog, which -> finish() }
+                .setNegativeButton(android.R.string.cancel, null)
+                .show()
+        }
         binding.btnTransferencias.setOnClickListener { abrir(TransferActivity::class.java) }
+
+        binding.btnPromociones.setOnClickListener {
+            Toast.makeText(this, R.string.proximamente, Toast.LENGTH_SHORT).show()
+        }
+        binding.btnCajeros.setOnClickListener {
+            Toast.makeText(this, R.string.proximamente, Toast.LENGTH_SHORT).show()
+        }
 
         binding.btnCambiarContrasena.setOnClickListener {
             val nuevaContrasena = EditText(this)
-            nuevaContrasena.hint = "Nueva contraseña"
+            nuevaContrasena.hint = getString(R.string.nueva_contrasena)
 
             AlertDialog.Builder(this)
-                .setTitle("Cambiar contraseña")
+                .setTitle(R.string.cambiar_contrasena_titulo)
                 .setView(nuevaContrasena)
-                .setPositiveButton("Aceptar") { _, _ ->
+                .setPositiveButton(android.R.string.ok) { _, _ ->
                     val nueva = nuevaContrasena.text.toString()
                     if (nueva.isBlank()) {
                         Toast.makeText(this, R.string.contrasena_vacia, Toast.LENGTH_SHORT).show()
-                        return@setPositiveButton
-                    }
-
-                    val c = Cliente(0, cliente.getNif(), null, null, nueva, null)
-                    val resultado = MiBancoOperacional.getInstance(this)?.changePassword(c) ?: 0
-
-                    if (resultado == 1) {
-                        cliente.setClaveSeguridad(nueva)
-                        Toast.makeText(this, R.string.contrasena_cambiada, Toast.LENGTH_SHORT).show()
+                    } else if (nueva.length < 4) {
+                        Toast.makeText(this, R.string.contrasena_corta, Toast.LENGTH_SHORT).show()
+                    } else if (nueva == cliente.getClaveSeguridad()) {
+                        Toast.makeText(this, R.string.contrasena_igual, Toast.LENGTH_SHORT).show()
                     } else {
-                        Toast.makeText(this, R.string.contrasena_error, Toast.LENGTH_SHORT).show()
+                        val claveAntigua = cliente.getClaveSeguridad()
+                        cliente.setClaveSeguridad(nueva)
+
+                        val mbo = MiBancoOperacional.getInstance(this)
+                        var resultado = 0
+                        if (mbo != null) {
+                            resultado = mbo.changePassword(cliente)
+                        }
+
+                        if (resultado == 1) {
+                            Toast.makeText(this, R.string.contrasena_cambiada, Toast.LENGTH_SHORT).show()
+                        } else {
+                            cliente.setClaveSeguridad(claveAntigua)
+                            Toast.makeText(this, R.string.contrasena_error, Toast.LENGTH_SHORT).show()
+                        }
                     }
                 }
-                .setNegativeButton("Cancelar") { dialog, _ ->
-                    dialog.dismiss()
-                }
+                .setNegativeButton(android.R.string.cancel, null)
                 .show()
         }
     }
