@@ -1,9 +1,10 @@
-package com.example.bancommjj
+package com.example.bancommjj.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bancommjj.R
 import com.example.bancommjj.databinding.ItemCuentaBinding
 import com.example.bancommjj.pojo.Cuenta
 import java.util.Locale

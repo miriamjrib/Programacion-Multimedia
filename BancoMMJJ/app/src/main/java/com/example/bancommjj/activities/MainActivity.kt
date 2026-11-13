@@ -1,4 +1,4 @@
-package com.example.bancommjj
+package com.example.bancommjj.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +10,7 @@ import com.example.bancommjj.databinding.ActivityMainBinding
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.IntentCompat
+import com.example.bancommjj.R
 import com.example.bancommjj.pojo.Cliente
 import com.example.bancommjj.bd.MiBancoOperacional
 

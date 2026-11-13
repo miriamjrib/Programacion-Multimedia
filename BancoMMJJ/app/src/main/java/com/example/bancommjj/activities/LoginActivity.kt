@@ -1,4 +1,4 @@
-package com.example.bancommjj
+package com.example.bancommjj.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.bancommjj.R
 import com.example.bancommjj.bd.MiBancoOperacional
 import com.example.bancommjj.databinding.ActivityLoginBinding
 import com.example.bancommjj.pojo.Cliente

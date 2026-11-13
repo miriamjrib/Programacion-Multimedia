@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BancoMMJJ">
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".activities.WelcomeActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -21,23 +21,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".TransferActivity"
+            android:name=".activities.TransferActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".GlobalPositionActivity"
+            android:name=".activities.GlobalPositionActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".MovementsActivity"
+            android:name=".activities.MovementsActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

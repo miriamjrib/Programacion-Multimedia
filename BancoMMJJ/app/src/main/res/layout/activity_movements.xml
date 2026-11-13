@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorSurface"
-    tools:context=".MovementsActivity">
+    tools:context=".activities.MovementsActivity">
 
     <TextView
         android:id="@+id/tvTitulo"

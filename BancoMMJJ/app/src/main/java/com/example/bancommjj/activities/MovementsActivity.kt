@@ -1,4 +1,4 @@
-package com.example.bancommjj
+package com.example.bancommjj.activities
 
 import android.os.Bundle
 import android.view.View
@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bancommjj.R
+import com.example.bancommjj.adapters.MovimientoAdapter
 import com.example.bancommjj.bd.MiBancoOperacional
 import com.example.bancommjj.databinding.ActivityMovementsBinding
 import com.example.bancommjj.pojo.Cliente
