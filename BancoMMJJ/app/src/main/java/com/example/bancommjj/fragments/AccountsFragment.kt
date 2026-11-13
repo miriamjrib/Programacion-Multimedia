@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bancommjj.adapters.AccountsListener
 import com.example.bancommjj.adapters.CuentaAdapter
 import com.example.bancommjj.bd.MiBancoOperacional
 import com.example.bancommjj.databinding.FragmentAccountsBinding
@@ -65,7 +66,10 @@ class AccountsFragment : Fragment() {
         binding.rvCuentas.layoutManager =
             LinearLayoutManager(requireContext())
 
-        binding.rvCuentas.adapter = CuentaAdapter(cuentas)
+        binding.rvCuentas.adapter = CuentaAdapter(
+            cuentas,
+            requireActivity() as AccountsListener
+        )
     }
 
     override fun onDestroyView() {

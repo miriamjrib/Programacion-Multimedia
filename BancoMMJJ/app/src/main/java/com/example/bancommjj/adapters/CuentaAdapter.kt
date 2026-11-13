@@ -9,12 +9,20 @@ import com.example.bancommjj.databinding.ItemCuentaBinding
 import com.example.bancommjj.pojo.Cuenta
 import java.util.Locale
 
-class CuentaAdapter(private val cuentas: List<Cuenta>) : RecyclerView.Adapter<CuentaAdapter.ViewHolder>() {
+class CuentaAdapter(
+    private val cuentas: List<Cuenta>,
+    private val listener: AccountsListener
+) : RecyclerView.Adapter<CuentaAdapter.ViewHolder>() {
 
-    class ViewHolder(val b: ItemCuentaBinding) : RecyclerView.ViewHolder(b.root)
+    class ViewHolder(val b: ItemCuentaBinding) :
+        RecyclerView.ViewHolder(b.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val b = ItemCuentaBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val b = ItemCuentaBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
         return ViewHolder(b)
     }
 
@@ -28,12 +36,21 @@ class CuentaAdapter(private val cuentas: List<Cuenta>) : RecyclerView.Adapter<Cu
         val contexto = holder.itemView.context
 
         holder.b.tvNumCuenta.text = cuenta.getNumeroCompleto()
-        holder.b.tvSaldo.text = String.format(Locale.getDefault(), "%.2f", saldo)
+        holder.b.tvSaldo.text =
+            String.format(Locale.getDefault(), "%.2f", saldo)
 
         if (saldo < 0) {
-            holder.b.tvSaldo.setTextColor(ContextCompat.getColor(contexto, R.color.banco_negativo))
+            holder.b.tvSaldo.setTextColor(
+                ContextCompat.getColor(contexto, R.color.banco_negativo)
+            )
         } else {
-            holder.b.tvSaldo.setTextColor(ContextCompat.getColor(contexto, R.color.banco_positivo))
+            holder.b.tvSaldo.setTextColor(
+                ContextCompat.getColor(contexto, R.color.banco_positivo)
+            )
+        }
+
+        holder.itemView.setOnClickListener {
+            listener.onAccountSelected(cuenta)
         }
     }
 }
